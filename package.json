@@ -4,7 +4,8 @@
   "description": "Game: Brain Games",
   "main": "index.js",
   "scripts": {
-    "test": "echo \"Error: no test specified\" && exit 1"
+    "build": "cross-env NODE_ENV=production babel src --out-dir dist --source-maps inline",
+    "prepublishOnly": "npm run build"
   },
   "author": "Evgeniy",
   "license": "ISC",
@@ -12,6 +13,10 @@
     "@babel/cli": "^7.4.4",
     "@babel/core": "^7.4.4",
     "@babel/node": "^7.2.2",
-    "@babel/preset-env": "^7.4.4"
+    "@babel/preset-env": "^7.4.4",
+    "cross-env": "^5.2.0"
+  },
+  "bin": {
+    "brain-games": "dist/bin/brain-games.js"
   }
 }
