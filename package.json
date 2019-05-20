@@ -1,6 +1,6 @@
 {
   "name": "brain-games-by-evgeniy",
-  "version": "1.0.0",
+  "version": "1.0.2",
   "description": "Study Project: Brain Games, Hexlet.io 1lvl",
   "main": "index.js",
   "scripts": {
