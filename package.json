@@ -1,6 +1,6 @@
 {
   "name": "brain-games-by-evgeniy",
-  "version": "1.0.2",
+  "version": "1.0.3",
   "description": "Study Project: Brain Games, Hexlet.io 1lvl",
   "main": "index.js",
   "scripts": {
@@ -21,7 +21,8 @@
     "eslint-plugin-import": "^2.17.2"
   },
   "bin": {
-    "brain-games": "dist/bin/brain-games.js"
+    "brain-games": "dist/bin/brain-games.js",
+    "brain-even": "dist/bin/brain-even.js"
   },
   "files": [
     "dist"
