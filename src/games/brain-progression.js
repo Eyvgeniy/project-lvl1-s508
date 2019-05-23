@@ -21,7 +21,7 @@ const playProgression = () => {
   const iter = (rounds) => {
     const startNumber = generateRandom(1, 10);
     const step = generateRandom(1, 10);
-    const randomStep = generateRandom(1, 10);
+    const randomStep = generateRandom(2, 10);
     console.log(`Question: ${randomProgression(startNumber, step, randomStep)}`);
     const userAnswer = readlineSync.question('Your answer: ');
     const answer = startNumber + step * (randomStep - 1);
