@@ -24,7 +24,7 @@ const playProgression = () => {
     const randomStep = generateRandom(1, 10);
     console.log(`Question: ${randomProgression(startNumber, step, randomStep)}`);
     const userAnswer = readlineSync.question('Your answer: ');
-    const answer = startNumber + step(randomStep - 1);
+    const answer = startNumber + step * (randomStep - 1);
     if (userAnswer == answer) {
       console.log('Correct!');
     } else {
