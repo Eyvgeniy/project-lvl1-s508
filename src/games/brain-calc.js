@@ -1,5 +1,5 @@
 import readlineSync from 'readline-sync';
-import { askName, generateRandom, checkAnswer } from '..';
+import { askName, generateRandom } from '..';
 
 const getRandomExpresion = (number1, number2) => {
   const randomNumer = generateRandom(1, 100);

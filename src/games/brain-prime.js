@@ -1,29 +1,28 @@
-import readlineSync from "readline-sync";
-import { askName, generateRandom } from "..";
+import readlineSync from 'readline-sync';
+import { askName, generateRandom } from '..';
 
 const playPrime = () => {
-  const welcomeMessage =
-    'Answer "yes" if given number is prime. Otherwise answer "no".?';
+  const welcomeMessage = 'Answer "yes" if given number is prime. Otherwise answer "no".?';
   const name = askName(welcomeMessage);
-  const checkPrime = num => {
+  const checkPrime = (num) => {
     const iter = (number, check) => {
       if (check > Math.sqrt(number)) {
-        return "yes";
+        return 'yes';
       }
-      return number % check ? iter(number, check + 1) : "no";
+      return number % check ? iter(number, check + 1) : 'no';
     };
     return iter(num, 2);
   };
-  const iter = rounds => {
+  const iter = (rounds) => {
     const number = generateRandom(1, 100);
     console.log(`Question: ${number}`);
-    const userAnswer = readlineSync.question("Your answer: ");
+    const userAnswer = readlineSync.question('Your answer: ');
     const answer = checkPrime(number);
     if (userAnswer === answer) {
-      console.log("Correct!");
+      console.log('Correct!');
     } else {
       return console.log(
-        `"${userAnswer}" is wrong answer ;(. Correct answer was "${answer}". Let's try again, ${name}!`
+        `"${userAnswer}" is wrong answer ;(. Correct answer was "${answer}". Let's try again, ${name}!`,
       );
     }
     if (rounds === 3) {

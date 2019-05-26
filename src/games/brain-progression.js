@@ -1,8 +1,8 @@
-import readlineSync from "readline-sync";
-import { askName, generateRandom } from "..";
+import readlineSync from 'readline-sync';
+import { askName, generateRandom } from '..';
 
 const playProgression = () => {
-  const welcomeMessage = "What number is missing in the progression?";
+  const welcomeMessage = 'What number is missing in the progression?';
   const name = askName(welcomeMessage);
   const randomProgression = (startNumber, step, randomStep) => {
     const start = startNumber;
@@ -18,20 +18,18 @@ const playProgression = () => {
     };
     return iter(startNumber, 2);
   };
-  const iter = rounds => {
+  const iter = (rounds) => {
     const startNumber = generateRandom(1, 10);
     const step = generateRandom(1, 10);
     const randomStep = generateRandom(2, 10);
-    console.log(
-      `Question: ${randomProgression(startNumber, step, randomStep)}`
-    );
-    const userAnswer = readlineSync.question("Your answer: ");
+    console.log(`Question: ${randomProgression(startNumber, step, randomStep)}`);
+    const userAnswer = readlineSync.question('Your answer: ');
     const answer = startNumber + step * (randomStep - 1);
     if (userAnswer == answer) {
-      console.log("Correct!");
+      console.log('Correct!');
     } else {
       return console.log(
-        `"${userAnswer}" is wrong answer ;(. Correct answer was "${answer}". Let's try again, ${name}!`
+        `"${userAnswer}" is wrong answer ;(. Correct answer was "${answer}". Let's try again, ${name}!`,
       );
     }
     if (rounds === 3) {
