@@ -2,7 +2,6 @@
   "name": "brain-games-by-evgeniy",
   "version": "1.0.0",
   "description": "Study Project: Brain Games, Hexlet.io 1lvl",
-  "main": "index.js",
   "scripts": {
     "build": "cross-env NODE_ENV=production babel src --out-dir dist --source-maps inline",
     "prepublishOnly": "npm run build"
