@@ -1,10 +1,9 @@
 import { playGame, generateRandom } from '..';
 
-const welcomeMessage =
-  'Answer "yes" if given number is prime. Otherwise answer "no".?';
+const welcomeMessage = 'Answer "yes" if given number is prime. Otherwise answer "no".?';
 export default () => {
   const playPrime = () => {
-    const isPrimeNumber = num => {
+    const isPrimeNumber = (num) => {
       const iter = (number, startDivisor) => {
         if (startDivisor > Math.sqrt(number)) {
           return true;
