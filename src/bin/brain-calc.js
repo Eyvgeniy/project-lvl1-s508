@@ -1,5 +1,5 @@
 #!/usr/bin/env node
-// import askName from '..';
-import playCalc from '../games/brain-calc';
+
+import playCalc from '../games/calc';
 
 playCalc();

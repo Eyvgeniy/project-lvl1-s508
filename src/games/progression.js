@@ -1,7 +1,7 @@
 import playGame from '..';
 import generateRandom from '../utils';
 
-const welcomeMessage = 'What number is missing in the progression?';
+const task = 'What number is missing in the progression?';
 const randomProgression = (startNumber, step, randomStep) => {
   const start = startNumber;
   const iter = (number, acc) => {
@@ -18,14 +18,14 @@ const randomProgression = (startNumber, step, randomStep) => {
   return iter(startNumber, 2);
 };
 
+const playProgression = () => {
+  const startNumber = generateRandom(1, 10);
+  const step = generateRandom(1, 10);
+  const randomStep = generateRandom(2, 10);
+  const question = randomProgression(startNumber, step, randomStep);
+  const answer = startNumber + step * (randomStep - 1);
+  return { question, answer };
+};
 export default () => {
-  const playProgression = () => {
-    const startNumber = generateRandom(1, 10);
-    const step = generateRandom(1, 10);
-    const randomStep = generateRandom(2, 10);
-    const question = randomProgression(startNumber, step, randomStep);
-    const answer = startNumber + step * (randomStep - 1);
-    return { question, answer };
-  };
-  playGame(welcomeMessage, playProgression);
+  playGame(task, playProgression);
 };

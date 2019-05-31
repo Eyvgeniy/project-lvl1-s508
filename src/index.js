@@ -15,10 +15,10 @@ export default (task, playGame) => {
     if (answer === userAnswer) {
       console.log('Correct!');
     } else {
-      console.log(`"${userAnswer}" is wrong answer ;(. Correct answer was "${answer}".`);
-      console.log(`Let's try again, ${name}!`);
+      return console.log(
+        `"${userAnswer}" is wrong answer ;(. Correct answer was "${answer}". Let's try again, ${name}!`,
+      );
     }
   }
-
-  console.log(`Congratulations, ${name}!`);
+  return console.log(`Congratulations, ${name}!`);
 };
