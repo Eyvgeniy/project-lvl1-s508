@@ -2,30 +2,27 @@ import playGame from '..';
 import generateRandom from '../utils';
 
 const task = 'What number is missing in the progression?';
-const randomProgression = (startNumber, step, randomStep) => {
-  const start = startNumber;
-  const iter = (number, acc) => {
-    const numberOfSteps = 10;
-    if (acc > numberOfSteps) {
-      return number;
+const createProgressionWithMissingMember = (start, diff, missingMember) => {
+  const progressionLength = 10;
+  let progression = '';
+  for (let i = 1; i <= progressionLength; i += 1) {
+    if (i === missingMember) {
+      progression += '.. ';
+    } else {
+      progression += `${start + diff * (i - 1)} `;
     }
-    if (acc === randomStep) {
-      return iter(`${number} ..`, acc + 1);
-    }
-    const next = start + step * (acc - 1);
-    return iter(`${number} ${next}`, acc + 1);
-  };
-  return iter(startNumber, 2);
+  }
+  return progression;
 };
 
-const playProgression = () => {
-  const startNumber = generateRandom(1, 10);
-  const step = generateRandom(1, 10);
-  const randomStep = generateRandom(2, 10);
-  const question = randomProgression(startNumber, step, randomStep);
-  const answer = startNumber + step * (randomStep - 1);
+const createGameData = () => {
+  const start = generateRandom(1, 10);
+  const diff = generateRandom(1, 10);
+  const missingMember = generateRandom(1, 10);
+  const question = createProgressionWithMissingMember(start, diff, missingMember);
+  const answer = String(start + diff * (missingMember - 1));
   return { question, answer };
 };
 export default () => {
-  playGame(task, playProgression);
+  playGame(task, createGameData);
 };
