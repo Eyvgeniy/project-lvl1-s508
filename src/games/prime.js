@@ -3,7 +3,7 @@ import generateRandom from '../utils';
 
 const task = 'Answer "yes" if given number is prime. Otherwise answer "no".?';
 const isPrime = (num) => {
-  if (num < 0) {
+  if (num < 2) {
     return false;
   }
   const iter = (number, startDivisor) => {
@@ -15,11 +15,11 @@ const isPrime = (num) => {
   return iter(num, 2);
 };
 
-const playPrime = () => {
+const createGameData = () => {
   const question = generateRandom(1, 100);
   const answer = isPrime(question) ? 'yes' : 'no';
   return { question, answer };
 };
 export default () => {
-  playGame(task, playPrime);
+  playGame(task, createGameData);
 };
