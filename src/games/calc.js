@@ -8,17 +8,19 @@ const calculateExpession = (a, b, operator) => {
       return a + b;
     case '-':
       return a - b;
-    default:
+    case '*':
       return a * b;
+    default:
+      return null;
   }
 };
 const operators = ['+', '-', '*'];
 const createGameData = () => {
-  const num1 = generateRandom(1, 20);
-  const num2 = generateRandom(1, 20);
-  const randomOperator = generateRandom(0, operators.length);
-  const question = `${num1} ${operators[randomOperator]} ${num2}`;
-  const answer = String(calculateExpession(num1, num2, operators[randomOperator]));
+  const a = generateRandom(1, 20);
+  const b = generateRandom(1, 20);
+  const randomOperator = generateRandom(0, operators.length - 1);
+  const question = `${a} ${operators[randomOperator]} ${b}`;
+  const answer = String(calculateExpession(a, b, operators[randomOperator]));
   return { question, answer };
 };
 export default () => {
