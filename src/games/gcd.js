@@ -5,8 +5,8 @@ const task = 'Find the greatest common divisor of given numbers.';
 const findGreaterCommonDivisor = (number1, number2) => {
   const maxNumber = Math.max(number1, number2);
   const minNumber = Math.min(number1, number2);
-  const remainderDivision = maxNumber % minNumber;
-  return remainderDivision ? findGreaterCommonDivisor(minNumber, remainderDivision) : minNumber;
+  const remainder = maxNumber % minNumber;
+  return remainder ? findGreaterCommonDivisor(minNumber, remainder) : minNumber;
 };
 const createGameData = () => {
   const num1 = generateRandom(1, 100);
