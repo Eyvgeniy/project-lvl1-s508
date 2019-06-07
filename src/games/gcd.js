@@ -2,17 +2,17 @@ import playGame from '..';
 import generateRandom from '../utils';
 
 const task = 'Find the greatest common divisor of given numbers.';
-const findGreaterCommonDivisor = (number1, number2) => {
-  const maxNumber = Math.max(number1, number2);
-  const minNumber = Math.min(number1, number2);
+const findGreaterCommonDivisor = (a, b) => {
+  const maxNumber = Math.max(a, b);
+  const minNumber = Math.min(a, b);
   const remainder = maxNumber % minNumber;
   return remainder ? findGreaterCommonDivisor(minNumber, remainder) : minNumber;
 };
 const createGameData = () => {
-  const num1 = generateRandom(1, 100);
-  const num2 = generateRandom(1, 100);
-  const question = `${num1} ${num2}`;
-  const answer = `${findGreaterCommonDivisor(num1, num2)}`;
+  const a = generateRandom(1, 100);
+  const b = generateRandom(1, 100);
+  const question = `${a} ${b}`;
+  const answer = String(findGreaterCommonDivisor(a, b));
   return { question, answer };
 };
 export default () => {
