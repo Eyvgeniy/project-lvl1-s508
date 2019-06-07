@@ -20,7 +20,7 @@ const createGameData = () => {
   const b = generateRandom(1, 20);
   const operator = generateRandom(0, operators.length - 1);
   const question = `${a} ${operators[operator]} ${b}`;
-  const answer = String(calculateExpession(a, b, operators[randomOperator]));
+  const answer = String(calculateExpession(a, b, operators[operator]));
   return { question, answer };
 };
 export default () => {
