@@ -7,9 +7,9 @@ const createProgressionWithMissingMember = (start, diff, missingMemberIndex) => 
   let progression = '';
   for (let i = 0; i < progressionLength; i += 1) {
     if (i === missingMemberIndex) {
-      progression = `${progression} .. `;
+      progression = `${progression} ..`;
     } else {
-      progression = `${progression} ${start + diff * i} `;
+      progression = `${progression} ${start + diff * i}`;
     }
   }
   return progression;
