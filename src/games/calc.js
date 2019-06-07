@@ -18,8 +18,8 @@ const operators = ['+', '-', '*'];
 const createGameData = () => {
   const a = generateRandom(1, 20);
   const b = generateRandom(1, 20);
-  const randomOperator = generateRandom(0, operators.length - 1);
-  const question = `${a} ${operators[randomOperator]} ${b}`;
+  const operator = generateRandom(0, operators.length - 1);
+  const question = `${a} ${operators[operator]} ${b}`;
   const answer = String(calculateExpession(a, b, operators[randomOperator]));
   return { question, answer };
 };
