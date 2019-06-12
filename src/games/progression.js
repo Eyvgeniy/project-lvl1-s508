@@ -1,7 +1,7 @@
 import playGame from '..';
 import generateRandom from '../utils';
 
-const progressionLength = 9;
+const progressionLength = 10;
 const task = 'What number is missing in the progression?';
 const getQuestion = (start, diff, missingMemberIndex, length) => {
   let progression = '';
@@ -18,8 +18,8 @@ const getQuestion = (start, diff, missingMemberIndex, length) => {
 const createGameData = () => {
   const start = generateRandom(1, 10);
   const diff = generateRandom(1, 10);
-  const missingMemberIndex = generateRandom(0, progressionLength);
-  const question = getQuestion(start, diff, missingMemberIndex, progressionLength);
+  const missingMemberIndex = generateRandom(0, progressionLength - 1);
+  const question = getQuestion(start, diff, missingMemberIndex, progressionLength - 1);
   const answer = String(start + diff * missingMemberIndex);
   return { question, answer };
 };
