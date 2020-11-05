@@ -3,6 +3,21 @@
 [![Maintainability](https://api.codeclimate.com/v1/badges/b43fa7c7425548543591/maintainability)](https://codeclimate.com/github/Eyvgeniy/project-lvl1-s508/maintainability)
 [![Build Status](https://travis-ci.org/Eyvgeniy/project-lvl1-s508.svg?branch=master)](https://travis-ci.org/Eyvgeniy/project-lvl1-s508)
 
+---
+
+### 1. Install dependencies:
+
+```
+$ make install
+```
+### 2. Start project:
+
+```
+$ make start
+```
+
+---
+
 ### Usage
 
 1. Even number: `brain-even`
